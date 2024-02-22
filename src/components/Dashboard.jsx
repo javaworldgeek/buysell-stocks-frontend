@@ -20,7 +20,7 @@ const Dashboard = () => {
     setErrors({ ...errors, [name]: '' });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let errors = {};
 
@@ -53,9 +53,9 @@ const Dashboard = () => {
       
       try {
         // Send form data to the backend endpoint
-        const response =  axios.post('http://localhost:8080/api/v1/buysell', formData);
+        const response =  await axios.post('http://localhost:8080/api/v1/buysell', formData);
         console.log('Data saved successfully:', response.data);
-        // Optionally, you can reset the form after successful submission
+        // Reset the form after successful submission
         setFormData({
           name: '',
           quantity: '',
