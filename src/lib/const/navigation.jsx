@@ -1,8 +1,6 @@
 import {
 	HiOutlinePlus,
-	HiClipboardList,
-	HiOutlineQuestionMarkCircle,
-	HiOutlineCog
+	HiClipboardList
 } from 'react-icons/hi'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
@@ -17,20 +15,5 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 		label: 'Product List',
 		path: '/products',
 		icon: <HiClipboardList />
-	}
-]
-
-export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
-	{
-		key: 'settings',
-		label: 'Settings',
-		path: '#',
-		icon: <HiOutlineCog />
-	},
-	{
-		key: 'support',
-		label: 'Help & Support',
-		path: '#',
-		icon: <HiOutlineQuestionMarkCircle />
 	}
 ]
