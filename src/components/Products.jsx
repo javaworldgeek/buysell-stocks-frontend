@@ -9,7 +9,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/buysell');
+        const response = await axios.get('http://localhost:8080/api/v1/buysellnew');
         setProducts(response.data);
         setLoading(false);
       } catch (error) {
@@ -24,11 +24,11 @@ const Products = () => {
 const handleBulkExecution = async () => {
   try {
     // Call the API for bulk execution
-    const response = await axios.post('http://localhost:8080/api/v1/buysell/execute');
+    const response = await axios.post('http://localhost:8080/api/v1/buysellnew/execute');
     console.log('Bulk execution response:', response.data);
     
     // If the API call is successful, fetch the updated product list
-    const updatedProductsResponse = await axios.get('http://localhost:8080/api/v1/buysell');
+    const updatedProductsResponse = await axios.get('http://localhost:8080/api/v1/buysellnew');
     setProducts(updatedProductsResponse.data);
   } catch (error) {
     console.error('Error executing bulk:', error);
@@ -39,11 +39,11 @@ const handleBulkExecution = async () => {
   const handleBuySellStocks = async () => {
     try {
       // Call the API for bulk execution
-      const response = await axios.put('http://localhost:8080/api/v1/buysell/doBuySellStocks');
+      const response = await axios.put('http://localhost:8080/api/v1/buysellnew/doBuySellStocks');
       console.log('Bulk execution response:', response.data);
       
       // If the API call is successful, fetch the updated product list
-      const updatedProductsResponse = await axios.get('http://localhost:8080/api/v1/buysell');
+      const updatedProductsResponse = await axios.get('http://localhost:8080/api/v1/buysellnew');
       setProducts(updatedProductsResponse.data);
     } catch (error) {
       console.error('Error executing bulk:', error);
@@ -54,11 +54,11 @@ const handleBulkExecution = async () => {
   const handleDeleteOperation = async () => {
     try {
       // Call the API for delete operation
-      const response = await axios.delete('http://localhost:8080/api/v1/buysell/deleteAll');
+      const response = await axios.delete('http://localhost:8080/api/v1/buysellnew/deleteAll');
       console.log('delete operation response:', response.data);
       
       // If the API call is successful, fetch the updated product list
-      const updatedProductsResponse = await axios.get('http://localhost:8080/api/v1/buysell');
+      const updatedProductsResponse = await axios.get('http://localhost:8080/api/v1/buysellnew');
       setProducts(updatedProductsResponse.data);
     } catch (error) {
       console.error('Error executing delete operation:', error);
@@ -68,7 +68,7 @@ const handleBulkExecution = async () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Product List</h2>
+      <h2 className="text-2xl font-bold mb-4">Order List</h2>
       <div className="flex justify-between items-center mb-4">
         <div>
           <button onClick={handleBulkExecution} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">

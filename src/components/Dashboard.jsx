@@ -53,7 +53,7 @@ const Dashboard = () => {
       
       try {
         // Send form data to the backend endpoint
-        const response =  await axios.post('http://localhost:8080/api/v1/buysell', formData);
+        const response =  await axios.post('http://localhost:8080/api/v1/buysellnew', formData);
         console.log('Data saved successfully:', response.data);
         // Reset the form after successful submission
         setFormData({
@@ -78,7 +78,7 @@ const Dashboard = () => {
 
   return (
     <div className="max-w-md mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Product Details</h2>
+      <h2 className="text-2xl font-bold mb-4">Order Details</h2>
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         {/* Form fields */}
         {/* Display success message if submission was successful */}
